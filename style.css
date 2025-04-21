@@ -1,0 +1,26 @@
+/* Target the main logo container link */
+#logo {
+  display: block !important; /* Ensure it's a block to hold background */
+  width: 120px !important;   /* Approx width of Premium logo, adjust if needed */
+  /* Use 'chrome-extension://__MSG_@@extension_id__/' to reference bundled image */
+  background-image: url('chrome-extension://__MSG_@@extension_id__/images/premium_logo.png') !important; /* <-- Make sure this matches your logo file name */
+  background-repeat: no-repeat !important;
+  background-position: center left !important; /* Align logo within its container */
+  background-size: contain !important; /* Scale the logo nicely */
+  margin-left: 16px !important; /* Adjust spacing if needed */
+}
+
+/* Hide the original YouTube SVG icon inside the link */
+#logo #logo-icon {
+  display: none !important;
+}
+
+/* Hide the country code often next to the logo (e.g., 'PH') */
+#country-code {
+    display: none !important;
+}
+
+/* Optional: Hide the text logo on smaller screens/different layouts if it appears */
+ytd-topbar-logo-renderer #logo-icon.ytd-topbar-logo-renderer {
+    display: none !important;
+}

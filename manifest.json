@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Premium Logo Look (JS Version)",
+  "version": "1.1", // Increment version
+  "description": "Replaces the standard YouTube logo with the Premium logo using JavaScript.",
+  "icons": {
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"], // <--- Change this line
+      "run_at": "document_idle" // Optional: Wait until page is mostly loaded
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      // Make sure this resource path matches your image file exactly!
+      "resources": ["images/premium_logo.svg"], // Or premium_logo.png
+      "matches": ["*://*.youtube.com/*"]
+    }
+  ]
+}
